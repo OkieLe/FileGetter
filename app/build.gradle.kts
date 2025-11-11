@@ -48,4 +48,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.okdownload)
+    implementation(libs.okdownload.sqlite)
+    implementation(libs.okdownload.okhttp)
+    implementation(libs.okdownload.ktx)
+    implementation(libs.okhttp)
+    implementation(libs.zip4j)
 }
