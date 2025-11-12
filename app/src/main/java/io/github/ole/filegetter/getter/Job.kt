@@ -28,7 +28,11 @@ data class Job(
     /**
      * Files stored in targetDir, to be modified by extractor
      */
-    val targetFiles: MutableList<String> = mutableListOf()
+    val targetFiles: MutableList<String> = mutableListOf(),
+    /**
+     * Remove cache folder after job success
+     */
+    val removeCacheOnSuccess: Boolean = true
 ) {
     enum class State(val code: Int) {
         /**

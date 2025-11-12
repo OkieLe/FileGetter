@@ -30,6 +30,12 @@ class Extractor(private val scope: CoroutineScope) {
             if (success) {
                 job.targetFiles.addAll(destDir.listFiles()?.map { it.name } ?: emptyList())
                 onResult(true, "")
+                if (job.removeCacheOnSuccess) {
+                    scope.launch(Dispatchers.IO) {
+                        val result = source.delete()
+                        Log.i(TAG, "Deleting cache: $source -> $result")
+                    }
+                }
             } else {
                 onResult(false, errMsg ?: "")
             }
