@@ -39,8 +39,8 @@ class MainActivity : ComponentActivity() {
             jobState.postValue(state)
         }
 
-        override fun onJobProgress(id: String, progress: Long) {
-            Log.i(TAG, "onJobProgress[$id]: $progress")
+        override fun onJobProgress(id: String, state: Job.State, progress: Long) {
+            Log.i(TAG, "onJobProgress[$id]: $state $progress")
         }
     }
 

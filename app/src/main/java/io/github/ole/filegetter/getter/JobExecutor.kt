@@ -41,7 +41,8 @@ class JobExecutor(private val scope: CoroutineScope) {
     }
 
     private fun notifyProgress(job: Job, progress: Long) {
-        jobListenerMap[job.id]?.onJobProgress(job.id, progress)
+        jobListenerMap[job.id]?.onJobProgress(job.id,
+            jobStateMap[job.id] ?: Job.State.WAITING, progress)
     }
 
     private fun download(job: Job) {

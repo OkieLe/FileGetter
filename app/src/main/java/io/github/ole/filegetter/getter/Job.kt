@@ -95,9 +95,10 @@ data class Job(
         /**
          * Notify download progress
          * @param id job id
+         * @param state job state
          * @param progress downloaded size of file
          */
-        fun onJobProgress(id: String, progress: Long)
+        fun onJobProgress(id: String, state: State, progress: Long)
 
         /**
          * Notify job state changes
